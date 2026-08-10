@@ -1,122 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState } from 'react';
+import Faculty from './pages/Faculty';
+import FacultyDetails from './pages/FacultyDetails';
+import Services from './pages/Services';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [lang, setLang] = useState('ar');
+  const [activeTab, setActiveTab] = useState('faculty');
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+  const handleSelectFaculty = (doctor) => {
+    setSelectedDoctor(doctor);
+    setActiveTab('details');
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
+    <div style={{ fontFamily: 'cairo', minHeight: '100vh', backgroundColor: '#f8fafc' }}>
+      {/* Navbar بسيط للتنقل بين الصفحات واللغات */}
+      <nav style={{ padding: '16px 24px', backgroundColor: '#0f172a', color: '#fff', display: 'flex', gap: '12px', alignItems: 'center' }}>
         <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')}
+          style={{ padding: '6px 12px', cursor: 'pointer', borderRadius: '4px', border: 'none', backgroundColor: '#38bdf8', fontWeight: 'bold' ,fontFamily: 'cairo'}}
         >
-          Count is {count}
+          {lang === 'ar' ? 'English' : 'عربي'}
         </button>
-      </section>
 
-      <div className="ticks"></div>
+        <span style={{ color: '#475569' }}>|</span>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <button
+          onClick={() => setActiveTab('faculty')}
+          style={{ padding: '6px 12px', cursor: 'pointer', backgroundColor: activeTab === 'faculty' ? '#334155' : 'transparent', color: '#fff', border: '1px solid #475569', borderRadius: '4px' ,fontFamily: 'cairo'}}
+        >
+          {lang === 'ar' ? 'أعضاء هيئة التدريس' : 'Faculty'}
+        </button>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <button
+          onClick={() => setActiveTab('services')}
+          style={{ padding: '6px 12px', cursor: 'pointer', backgroundColor: activeTab === 'services' ? '#334155' : 'transparent', color: '#fff', border: '1px solid #475569', borderRadius: '4px',fontFamily: 'cairo' }}
+        >
+          {lang === 'ar' ? 'الخدمات' : 'Services'}
+        </button>
+      </nav>
+
+      {/* الشاشات */}
+      <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+        {activeTab === 'faculty' && (
+          <Faculty onSelectFaculty={handleSelectFaculty} lang={lang} />
+        )}
+
+        {activeTab === 'details' && (
+          <FacultyDetails
+            selectedDoctor={selectedDoctor}
+            onBack={() => setActiveTab('faculty')}
+            lang={lang}
+          />
+        )}
+
+        {activeTab === 'services' && (
+          <Services lang={lang} />
+        )}
+      </div>
+    </div>
+  );
 }
-
-export default App
