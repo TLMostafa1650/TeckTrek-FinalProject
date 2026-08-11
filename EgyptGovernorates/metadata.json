@@ -1,0 +1,6 @@
+{
+  "name": "Faculty of Computers and Data Science",
+  "description": "Official website for the Faculty of Computers and Data Science - Home, Layout & Navigation System",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
