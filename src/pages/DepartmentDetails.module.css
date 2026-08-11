@@ -1,0 +1,115 @@
+/* src/pages/DepartmentDetails.module.css */
+
+.departmentDetailsPage {
+  padding: 2.5rem 0;
+  min-height: 70vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.backLink:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+}
+
+.backLink:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.departmentHeader {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.departmentImage {
+  width: 40%;
+  object-fit: cover;
+  min-height: 280px;
+}
+
+.departmentInfo {
+  padding: 2rem;
+  flex: 1;
+}
+
+.departmentInfo h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.departmentInfo p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.notFound h2 {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.notFound a {
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.notFound a:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .departmentHeader {
+    flex-direction: column;
+  }
+  .departmentImage {
+    width: 100%;
+    height: 220px;
+  }
+  .departmentInfo {
+    padding: 1.5rem;
+  }
+  .departmentInfo h1 {
+    font-size: 1.4rem;
+  }
+}

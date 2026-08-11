@@ -1,0 +1,64 @@
+{
+  "common": {
+    "viewDetails": "View Details"
+  },
+  "about": {
+    "title": "Faculty of Computers and Data Science",
+    "intro": "We prepare a generation of specialists capable of leading digital transformation, through modern academic programs and a research environment that supports innovation.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a regionally leading faculty in computing and data science education and research by 2030.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide outstanding education and applied research that keeps pace with labor market needs and serves the community.",
+    "statsTitle": "The Faculty in Numbers",
+    "stats": {
+      "students": "Students",
+      "faculty": "Faculty Members",
+      "departments": "Academic Departments",
+      "graduationRate": "Graduation Rate"
+    },
+    "valuesTitle": "Our Values",
+    "values": {
+      "excellence": {
+        "title": "Excellence",
+        "text": "We strive for excellence in everything we teach and research."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "text": "We encourage creative thinking and solving problems in new ways."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "text": "We uphold the highest standards of academic and professional honesty."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "text": "We believe in the power of teamwork between students and faculty."
+      }
+    },
+    "historyTitle": "Our History",
+    "historyText": "The faculty was founded to meet the growing need for computing and data science specialists, and has continued to expand its programs and departments over the years."
+  },
+  "departments": {
+    "badge": "Academic Departments",
+    "pageTitle": "Faculty Departments",
+    "pageIntro": "Five specialized departments covering the faculty's core computing and data science fields, preparing students for the job market.",
+    "empty": "No departments available at the moment.",
+    "notFound": "Department not found.",
+    "backToList": "Back to Departments",
+    "relatedPrograms": "The Program under this Department",
+    "programsCount": "Program",
+    "viewDetailsAria": "View details of {{name}} department"
+  },
+  "programs": {
+    "badge": "Academic Programs",
+    "pageTitle": "Academic Programs",
+    "pageIntro": "Specialized Bachelor's programs, each linked to one of the faculty's five departments.",
+    "empty": "No programs available at the moment.",
+    "notFound": "Program not found.",
+    "backToList": "Back to Programs",
+    "duration": "Duration",
+    "degreeLabel": "Degree",
+    "departmentLabel": "Department",
+    "viewDetailsAria": "View details of {{name}} program"
+  }
+}
