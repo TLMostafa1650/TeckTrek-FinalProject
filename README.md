@@ -19,19 +19,6 @@ files so the site can switch language without duplicating any page.
 ---
 
 
-### Team Members
-
-| Person | Name | ID | Task |
-| ------ | ---- | -- | ---- |
-| Person 1 | Marwan Hassan Ibrahim | 20221447788 | Home + Layout |
-| Person 2 | Mariam Moneam | 23011528 | About + Departments + Programs |
-| Person 3 | Yousef Alaa | 23011647 | News + Announcements |
-| Person 4 | Mariam Khaled | 23011528 | Faculty + Services |
-| Person 5 | Mostafa ELhosseny | 23011539 | Events + Contact |
-| Person 6 | Mostafa Ashraf | 23012069 | Architecture + i18n + Integration |
-
----
-
 ## Features
 
 - **13 pages** with React Router, including detail pages and a custom 404 page.
@@ -298,11 +285,12 @@ Add the screenshots to a `screenshots/` folder and link them here, for example:
 
 ## Team
 
-| Task | Responsibility |
-|---|---|
-| 1 | Home, Navbar, Footer, Hero, Introduction, Statistics, Quick Links |
-| 2 | About, Departments, Department Details, Programs, Program Details |
-| 3 | News, News Details, Announcements, search and filtering |
-| 4 | Faculty, Faculty Details, Services, search and filtering |
-| 5 | Events, Contact, form validation |
-| 6 | Routing, i18n (Arabic / English), RTL / LTR, 404 page, global states, integration |
+| Task | Member                | ID          | Responsibility                                                                                                    |
+| ---- | --------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| 1    | Marwan Hassan Ibrahim | 20221447788 | Home, Navbar, Footer, Hero, Introduction, Statistics, Quick Links                                                 |
+| 2    | Mariam Moneam         | 23011528    | About, Departments, Department Details, Programs, Program Details                                                 |
+| 3    | Yousef Alaa           | 23011647    | News, News Details, Announcements, Search and Filtering                                                           |
+| 4    | Mariam Khaled         | 23011528    | Faculty, Faculty Details, Services, Search and Filtering                                                          |
+| 5    | Mostafa ELhosseny     | 23011539    | Events, Contact, Contact Form, Form Validation, Success/Error Messages                                            |
+| 6    | Mostafa Ashraf        | 23012069    | Routing, i18n (Arabic / English), RTL / LTR, 404 Page, Global States, Integration, GitHub & README, Final Testing |
+
