@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/Home/Home';
 import Programs from '../pages/Programs';
@@ -13,7 +13,9 @@ import Announcements from '../pages/Announcements/Announcements';
 import Events from '../pages/Events/Events';
 import Contact from '../pages/Contact/Contact';
 import Faculty from '../pages/Faculty';
+import FacultyDetails from '../pages/FacultyDetails/FacultyDetails';
 import Services from '../pages/Services';
+import NotFound from '../pages/NotFound/NotFound';
 
 export default function AppRoutes() {
   return (
@@ -31,8 +33,9 @@ export default function AppRoutes() {
         <Route path="events" element={<Events />} />
         <Route path="contact" element={<Contact />} />
         <Route path="faculty" element={<Faculty />} />
+        <Route path="faculty/:id" element={<FacultyDetails />} />
         <Route path="services" element={<Services />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
