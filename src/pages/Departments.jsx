@@ -3,10 +3,14 @@ import { useTranslation } from "react-i18next";
 import { departments } from "../data/departments";
 import DepartmentCard from "../components/DepartmentsCard/DepartmentCard";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import Loading from "../components/Loading/Loading";
+import ErrorState from "../components/ErrorState/ErrorState";
+import usePageData from "../hooks/usePageData";
 import styles from "./Departments.module.css";
 
 function Departments() {
   const { t } = useTranslation();
+  const { loading, error, retry } = usePageData(departments);
 
   return (
     <div className={styles.departmentsPage}>
@@ -19,7 +23,11 @@ function Departments() {
           align="center"
         />
 
-        {departments.length === 0 ? (
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <ErrorState onRetry={retry} />
+        ) : departments.length === 0 ? (
           <p className={styles.empty}>{t("departments.empty")}</p>
         ) : (
           <div className={styles.departmentsGrid}>

@@ -182,6 +182,7 @@ export default function Contact() {
                     id="contact-email"
                     name="email"
                     type="email"
+                    dir="ltr"
                     value={form.email}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.email)}
@@ -201,6 +202,7 @@ export default function Contact() {
                     id="contact-phone"
                     name="phone"
                     type="tel"
+                    dir="ltr"
                     value={form.phone}
                     onChange={handleChange}
                     aria-invalid={Boolean(errors.phone)}

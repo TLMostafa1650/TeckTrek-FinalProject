@@ -2,12 +2,16 @@ import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import AnnouncementCard from '../../components/AnnouncementCard/AnnouncementCard';
+import Loading from '../../components/Loading/Loading';
+import ErrorState from '../../components/ErrorState/ErrorState';
+import usePageData from '../../hooks/usePageData';
 import announcements from '../../data/announcements';
 import styles from './Announcements.module.css';
 
 export default function Announcements() {
   const { t } = useTranslation();
   const [search, setSearch] = useState('');
+  const { loading, error, retry } = usePageData(announcements);
 
   const filtered = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -30,9 +34,15 @@ export default function Announcements() {
             aria-label={t('announcementsPage.search')}
           />
         </div>
-        <div className={styles.list}>
-          {filtered.length > 0 ? filtered.map((item) => <AnnouncementCard key={item.id} item={item} />) : <div className={styles.empty}>{t('announcementsPage.empty')}</div>}
-        </div>
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <ErrorState onRetry={retry} />
+        ) : (
+          <div className={styles.list}>
+            {filtered.length > 0 ? filtered.map((item) => <AnnouncementCard key={item.id} item={item} />) : <div className={styles.empty}>{t('announcementsPage.empty')}</div>}
+          </div>
+        )}
       </div>
     </div>
   );

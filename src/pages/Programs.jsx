@@ -3,10 +3,14 @@ import { useTranslation } from "react-i18next";
 import { programs } from "../data/programs";
 import ProgramCard from "../components/program card/ProgramCard";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import Loading from "../components/Loading/Loading";
+import ErrorState from "../components/ErrorState/ErrorState";
+import usePageData from "../hooks/usePageData";
 import styles from "./Programs.module.css";
 
 function Programs() {
   const { t } = useTranslation();
+  const { loading, error, retry } = usePageData(programs);
 
   return (
     <div className={styles.programsPage}>
@@ -19,7 +23,11 @@ function Programs() {
           align="center"
         />
 
-        {programs.length === 0 ? (
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <ErrorState onRetry={retry} />
+        ) : programs.length === 0 ? (
           <p className={styles.empty}>{t("programs.empty")}</p>
         ) : (
           <div className={styles.programsGrid}>

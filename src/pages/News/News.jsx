@@ -2,6 +2,9 @@ import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import NewsCard from '../../components/NewsCard/NewsCard';
+import Loading from '../../components/Loading/Loading';
+import ErrorState from '../../components/ErrorState/ErrorState';
+import usePageData from '../../hooks/usePageData';
 import news from '../../data/news';
 import styles from './News.module.css';
 
@@ -9,6 +12,7 @@ export default function News() {
   const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('all');
+  const { loading, error, retry } = usePageData(news);
 
   const filteredNews = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -43,7 +47,11 @@ export default function News() {
           </select>
         </div>
 
-        {filteredNews.length > 0 ? (
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <ErrorState onRetry={retry} />
+        ) : filteredNews.length > 0 ? (
           <div className={styles.grid}>
             {filteredNews.map((item) => <NewsCard key={item.id} item={item} />)}
           </div>
