@@ -2,13 +2,21 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationAR from './locales/ar/translation.json';
 import translationEN from './locales/en/translation.json';
+import translationARTask2 from './locales/ar/translation task2.json';
+import translationENTask2 from './locales/en/translation task2.json';
 
 const resources = {
   ar: {
-    translation: translationAR,
+    translation: {
+      ...translationAR,
+      ...translationARTask2,
+    },
   },
   en: {
-    translation: translationEN,
+    translation: {
+      ...translationEN,
+      ...translationENTask2,
+    },
   },
 };
 
