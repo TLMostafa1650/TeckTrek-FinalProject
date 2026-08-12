@@ -8,20 +8,21 @@ import styles from './EventsSection.module.css';
 export default function EventsSection() {
   const { t } = useTranslation();
 
+  // Every visible value is a translation key so the section works in both languages.
   const events = [
     {
       id: 1,
-      day: '15',
-      month: 'سبتمبر',
+      dayKey: 'eventsSection.event1Day',
+      monthKey: 'eventsSection.event1Month',
       titleKey: 'eventsSection.event1Title',
-      location: 'قاعة المؤتمرات الكبرى بالكلية',
+      locationKey: 'eventsSection.event1Location',
     },
     {
       id: 2,
-      day: '20',
-      month: 'سبتمبر',
+      dayKey: 'eventsSection.event2Day',
+      monthKey: 'eventsSection.event2Month',
       titleKey: 'eventsSection.event2Title',
-      location: 'المبنى المركزي والمعامل الذكية',
+      locationKey: 'eventsSection.event2Location',
     },
   ];
 
@@ -39,14 +40,14 @@ export default function EventsSection() {
             <NavLink key={evt.id} to="/events" style={{ textDecoration: 'none' }}>
               <div className={styles.card}>
                 <div className={styles.dateBox}>
-                  <span className={styles.day}>{evt.day}</span>
-                  <span className={styles.month}>{evt.month}</span>
+                  <span className={styles.day}>{t(evt.dayKey)}</span>
+                  <span className={styles.month}>{t(evt.monthKey)}</span>
                 </div>
                 <div>
                   <h3 className={styles.eventTitle}>{t(evt.titleKey)}</h3>
                   <div className={styles.eventLocation}>
-                    <FaMapMarkerAlt color="var(--primary-700)" />
-                    <span>{evt.location}</span>
+                    <FaMapMarkerAlt color="var(--primary-700)" aria-hidden="true" />
+                    <span>{t(evt.locationKey)}</span>
                   </div>
                 </div>
               </div>

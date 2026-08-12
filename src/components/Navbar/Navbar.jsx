@@ -67,12 +67,15 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={styles.topBarInfo}>
           <a href="tel:+20212345678" className={styles.topBarLink}>
-            <FaPhoneAlt size={12} />
-            <span>+20 2 12345678</span>
+            <FaPhoneAlt size={12} aria-hidden="true" />
+            <span dir="ltr">{t('footer.phone')}</span>
           </a>
-          <a href="mailto:info@fci.edu.eg" className={styles.topBarLink}>
-            <FaEnvelope size={12} />
-            <span>info@fci.edu.eg</span>
+          <a
+            href={`mailto:${t('footer.email')}`}
+            className={styles.topBarLink}
+          >
+            <FaEnvelope size={12} aria-hidden="true" />
+            <span dir="ltr">{t('footer.email')}</span>
           </a>
         </div>
         <div>
@@ -94,7 +97,7 @@ export default function Navbar() {
         </NavLink>
 
         {/* Desktop Nav Links */}
-        <nav className={styles.navDesktop} aria-label="Main Navigation">
+        <nav className={styles.navDesktop} aria-label={t('common.mainNav')}>
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
@@ -114,7 +117,7 @@ export default function Navbar() {
           <button
             onClick={toggleLanguage}
             className={styles.langBtn}
-            aria-label="Switch Language"
+            aria-label={t('common.switchLanguage')}
             type="button"
           >
             <FaGlobe />
@@ -159,14 +162,14 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileOpen(false)}
             className={styles.closeBtn}
-            aria-label="Close menu"
+            aria-label={t('common.closeMenu')}
             type="button"
           >
             <FaTimes />
           </button>
         </div>
 
-        <nav className={styles.mobileNavLinks} aria-label="Mobile Navigation">
+        <nav className={styles.mobileNavLinks} aria-label={t('common.mobileNav')}>
           {navLinks.map((link) => (
             <NavLink
               key={link.path}

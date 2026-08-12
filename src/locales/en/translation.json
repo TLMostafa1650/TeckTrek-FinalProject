@@ -28,7 +28,8 @@
       "slide2Desc": "Securing digital spaces and building resilient, trustworthy information systems",
       "slide3Title": "Software Engineering & Smart Systems",
       "slide3Desc": "Developing innovative applications and software solutions for global market demands"
-    }
+    },
+    "goToSlide": "Go to slide {{number}}"
   },
   "introduction": {
     "badge": "About Faculty",
@@ -42,7 +43,8 @@
       "labsDesc": "Advanced facilities for artificial intelligence, robotics, and cybersecurity",
       "partnershipsTitle": "Industry Partnerships",
       "partnershipsDesc": "Ongoing collaboration with tech industry leaders for student internships and career opportunities"
-    }
+    },
+    "imageAlt": "The Faculty of Computers and Data Science building"
   },
   "statistics": {
     "badge": "Facts & Numbers",
@@ -139,7 +141,13 @@
     "event1Title": "Annual Tech Career Fair with Industry Leaders",
     "event1Date": "September 15, 2026",
     "event2Title": "Graduation Projects Exhibition & Honor Ceremony",
-    "event2Date": "September 20, 2026"
+    "event2Date": "September 20, 2026",
+    "event1Month": "September",
+    "event1Day": "15",
+    "event1Location": "The Faculty's Grand Conference Hall",
+    "event2Month": "September",
+    "event2Day": "20",
+    "event2Location": "The Central Building and Smart Labs"
   },
   "servicesSection": {
     "badge": "E-Services",
@@ -175,11 +183,6 @@
   },
   "button": {
     "loading": "Loading..."
-  },
-  "placeholders": {
-    "pageTitle": "Page",
-    "underConstruction": "This page is under development by other team members.",
-    "backHome": "Back to Home"
   },
   "newsPage": {
     "badge": "News & Highlights",
@@ -275,7 +278,15 @@
     }
   },
   "common": {
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "loading": "Loading data...",
+    "error": "An error occurred while loading the data.",
+    "retry": "Try again",
+    "followUsOn": "Follow us on {{platform}}",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "switchLanguage": "Switch language",
+    "closeMenu": "Close menu"
   },
   "about": {
     "title": "Faculty of Computers and Data Science",
@@ -334,7 +345,9 @@
     "duration": "Duration",
     "degreeLabel": "Degree",
     "departmentLabel": "Department",
-    "viewDetailsAria": "View details of {{name}} program"
+    "viewDetailsAria": "View details of {{name}} program",
+    "durationLabelWithValue": "Duration: {{value}}",
+    "degreeLabelWithValue": "Degree: {{value}}"
   },
   "facultyPage": {
     "badge": "Faculty",
@@ -343,16 +356,29 @@
     "search": "Search by name or title...",
     "department": "Department",
     "allDepartments": "All Departments",
-    "showing": "Showing {{count}} faculty members",
     "clear": "Clear filters",
     "viewProfile": "View Profile",
-    "close": "Close profile",
     "emptyTitle": "No faculty members found",
-    "emptyText": "Try a different name, title, or department."
+    "emptyText": "Try a different name, title, or department.",
+    "showing_one": "Showing {{count}} faculty member",
+    "showing_other": "Showing {{count}} faculty members",
+    "backToFaculty": "Back to Faculty",
+    "notFound": "Faculty member not found.",
+    "contact": "Contact",
+    "aboutTitle": "About",
+    "aboutText": "{{name}} is a member of the {{department}} department and contributes to teaching, scientific research, and student supervision at the Faculty of Computers and Data Science."
   },
   "servicesPage": {
     "badge": "Student & Academic Services",
     "title": "Faculty Services",
-    "subtitle": "Helpful services and support available to students across the faculty."
+    "subtitle": "Helpful services and support available to students across the faculty.",
+    "empty": "No services available at the moment."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist or may have been moved.",
+    "backHome": "Back to Home",
+    "browseDepartments": "Browse Departments"
   }
 }
