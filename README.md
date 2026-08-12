@@ -288,7 +288,7 @@ Add the screenshots to a `screenshots/` folder and link them here, for example:
 | Task | Member                | ID          | Responsibility                                                                                                    |
 | ---- | --------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------- |
 | 1    | Marwan Hassan Ibrahim | 20221447788 | Home, Navbar, Footer, Hero, Introduction, Statistics, Quick Links                                                 |
-| 2    | Mariam Moneam         | 23011528    | About, Departments, Department Details, Programs, Program Details                                                 |
+| 2    | Mariam Moneam         | 2402247098  | About, Departments, Department Details, Programs, Program Details                                                 |
 | 3    | Yousef Alaa           | 23011647    | News, News Details, Announcements, Search and Filtering                                                           |
 | 4    | Mariam Khaled         | 23011528    | Faculty, Faculty Details, Services, Search and Filtering                                                          |
 | 5    | Mostafa ELhosseny     | 23011539    | Events, Contact, Contact Form, Form Validation, Success/Error Messages                                            |
