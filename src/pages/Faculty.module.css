@@ -122,8 +122,7 @@
   box-shadow: var(--shadow-card);
 }
 
-.avatar,
-.modalAvatar {
+.avatar {
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -133,17 +132,13 @@
   border: 3px solid #d5f5ef;
   font-weight: 800;
   letter-spacing: 0.02em;
-}
-
-.avatar {
   width: 92px;
   height: 92px;
   margin-bottom: 0.9rem;
   font-size: 1.35rem;
 }
 
-.departmentBadge,
-.modalBadge {
+.departmentBadge {
   color: var(--primary-800);
   background: var(--primary-100);
   border-radius: 999px;
@@ -237,78 +232,6 @@
 
 .empty p {
   margin: 0 0 1rem;
-}
-
-.modalBackdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: rgba(15, 23, 42, 0.58);
-  backdrop-filter: blur(3px);
-}
-
-.modal {
-  position: relative;
-  width: min(440px, 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  background: var(--bg-surface);
-  border: 1px solid #dbe4ee;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
-}
-
-.modalClose {
-  position: absolute;
-  inset-block-start: 0.8rem;
-  inset-inline-end: 0.8rem;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: #f1f5f9;
-  color: var(--text-muted);
-  cursor: pointer;
-}
-
-.modalClose:hover {
-  background: #e2e8f0;
-  color: var(--text-dark);
-}
-
-.modalAvatar {
-  width: 110px;
-  height: 110px;
-  margin-bottom: 1rem;
-  font-size: 1.7rem;
-}
-
-.modal h2 {
-  margin: 0.8rem 0 0.35rem;
-  color: var(--text-dark);
-}
-
-.modalPosition {
-  margin: 0;
-  color: var(--text-muted);
-}
-
-.modalEmail {
-  margin-top: 1.1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--primary-700);
-  text-decoration: none;
-  font-weight: 700;
 }
 
 .visuallyHidden {

@@ -1,16 +1,25 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaSearch, FaTimes, FaUserTie, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import useLang from "../hooks/useLang";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import Loading from "../components/Loading/Loading";
 import faculty from "../data/faculty";
 import styles from "./Faculty.module.css";
 
 export default function Faculty() {
-  const { t, i18n } = useTranslation();
-  const lang = (i18n.language || "en").startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState("all");
-  const [selected, setSelected] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Show the loading state briefly while the faculty list is prepared.
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 400);
+    return () => clearTimeout(timer);
+  }, []);
 
   const departments = useMemo(
     () => [...new Map(faculty.map((member) => [member.department.en, member.department])).values()],
@@ -82,96 +91,71 @@ export default function Faculty() {
           </label>
         </div>
 
-        <div className={styles.resultBar}>
-          <span>
-            {t("facultyPage.showing", { count: filteredFaculty.length })}
-          </span>
-          {(search || department !== "all") && (
-            <button type="button" onClick={clearFilters} className={styles.clearButton}>
-              <FaTimes aria-hidden="true" />
-              {t("facultyPage.clear")}
-            </button>
-          )}
-        </div>
-
-        {filteredFaculty.length > 0 ? (
-          <div className={styles.grid}>
-            {filteredFaculty.map((member) => (
-              <article className={styles.card} key={member.id}>
-                <div className={styles.avatar} aria-hidden="true">
-                  {member.initials}
-                </div>
-
-                <div className={styles.departmentBadge}>
-                  {member.department[lang]}
-                </div>
-
-                <h2 className={styles.name}>{member.name[lang]}</h2>
-                <p className={styles.position}>{member.position[lang]}</p>
-
-                <div className={styles.divider} />
-
-                <a className={styles.email} href={`mailto:${member.email}`}>
-                  <FaEnvelope aria-hidden="true" />
-                  <span>{member.email}</span>
-                </a>
-
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <div className={styles.resultBar}>
+              <span>
+                {t("facultyPage.showing", { count: filteredFaculty.length })}
+              </span>
+              {(search || department !== "all") && (
                 <button
                   type="button"
-                  className={styles.profileButton}
-                  onClick={() => setSelected(member)}
+                  onClick={clearFilters}
+                  className={styles.clearButton}
                 >
-                  <FaUserTie aria-hidden="true" />
-                  {t("facultyPage.viewProfile")}
+                  <FaTimes aria-hidden="true" />
+                  {t("facultyPage.clear")}
                 </button>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <div className={styles.empty}>
-            <FaSearch aria-hidden="true" />
-            <h2>{t("facultyPage.emptyTitle")}</h2>
-            <p>{t("facultyPage.emptyText")}</p>
-            <button type="button" onClick={clearFilters}>
-              {t("facultyPage.clear")}
-            </button>
-          </div>
+              )}
+            </div>
+
+            {filteredFaculty.length > 0 ? (
+              <div className={styles.grid}>
+                {filteredFaculty.map((member) => (
+                  <article className={styles.card} key={member.id}>
+                    <div className={styles.avatar} aria-hidden="true">
+                      {member.initials}
+                    </div>
+
+                    <div className={styles.departmentBadge}>
+                      {member.department[lang]}
+                    </div>
+
+                    <h2 className={styles.name}>{member.name[lang]}</h2>
+                    <p className={styles.position}>{member.position[lang]}</p>
+
+                    <div className={styles.divider} />
+
+                    <a className={styles.email} href={`mailto:${member.email}`}>
+                      <FaEnvelope aria-hidden="true" />
+                      <span dir="ltr">{member.email}</span>
+                    </a>
+
+                    <Link
+                      to={`/faculty/${member.id}`}
+                      className={styles.profileButton}
+                    >
+                      <FaUserTie aria-hidden="true" />
+                      {t("facultyPage.viewProfile")}
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className={styles.empty}>
+                <FaSearch aria-hidden="true" />
+                <h2>{t("facultyPage.emptyTitle")}</h2>
+                <p>{t("facultyPage.emptyText")}</p>
+                <button type="button" onClick={clearFilters}>
+                  {t("facultyPage.clear")}
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
-
-      {selected && (
-        <div
-          className={styles.modalBackdrop}
-          role="presentation"
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget) setSelected(null);
-          }}
-        >
-          <div
-            className={styles.modal}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="faculty-profile-title"
-          >
-            <button
-              type="button"
-              className={styles.modalClose}
-              onClick={() => setSelected(null)}
-              aria-label={t("facultyPage.close")}
-            >
-              <FaTimes />
-            </button>
-            <div className={styles.modalAvatar} aria-hidden="true">{selected.initials}</div>
-            <div className={styles.modalBadge}>{selected.department[lang]}</div>
-            <h2 id="faculty-profile-title">{selected.name[lang]}</h2>
-            <p className={styles.modalPosition}>{selected.position[lang]}</p>
-            <a href={`mailto:${selected.email}`} className={styles.modalEmail}>
-              <FaEnvelope />
-              {selected.email}
-            </a>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

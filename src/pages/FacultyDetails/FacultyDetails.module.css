@@ -1,0 +1,160 @@
+/* src/pages/FacultyDetails/FacultyDetails.module.css */
+
+.page {
+  padding: 2.5rem 0 4rem;
+  min-height: 70vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.backLink:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+}
+
+.backLink:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.profileCard {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-800), var(--primary-600));
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-800);
+  background: var(--primary-100);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.departmentBadge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-950);
+  background: var(--accent-400);
+  margin-bottom: 0.6rem;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.35rem, 4vw, 1.9rem);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.position {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0;
+  color: var(--primary-100);
+  font-size: 0.98rem;
+}
+
+.section {
+  padding: 1.75rem 2rem;
+  border-top: 1px solid var(--primary-100);
+}
+
+.sectionTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-800);
+}
+
+.aboutText {
+  margin: 0;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.email:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+}
+
+.email:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.notFound {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  color: var(--text-dark);
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .position {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 1.5rem 1.25rem;
+  }
+}
