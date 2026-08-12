@@ -1,0 +1,57 @@
+/* src/pages/About.module.css */
+
+.aboutPage {
+  padding: 3rem 0;
+  min-height: 70vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutSection {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.aboutSection h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.aboutSection p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 2rem 0;
+  }
+  .aboutSection {
+    padding: 1.25rem;
+  }
+  .aboutSection h2 {
+    font-size: 1.15rem;
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

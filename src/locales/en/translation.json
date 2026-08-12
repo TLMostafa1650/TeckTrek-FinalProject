@@ -88,7 +88,14 @@
     "item2Desc": "Students developed an AI platform analyzing medical data using machine learning algorithms.",
     "item3Title": "Applications Open for Postgraduate Programs for New Academic Year",
     "item3Date": "August 01, 2026",
-    "item3Desc": "Postgraduate studies announce admissions for Master's and Ph.D. degrees in CS, IS, and IT."
+    "item3Desc": "Postgraduate studies announce admissions for Master's and Ph.D. degrees in CS, IS, and IT.",
+    "item4Title": "Faculty Research Team Publishes New Data Science Study",
+    "item4Date": "July 28, 2026",
+    "item4Desc": "A faculty research team published a new study focused on practical data science applications.",
+    "item1Content": "The faculty welcomes researchers and students to a focused program of talks and discussions about recent developments in artificial intelligence and cybersecurity.",
+    "item2Content": "The student team represented the faculty in the Arab Coding Hackathon and achieved first place with an AI-based medical data analysis platform.",
+    "item3Content": "Applications are now open for the new academic year. Applicants can review the available postgraduate tracks and admission requirements.",
+    "item4Content": "The research team shared new findings that demonstrate practical uses of data science methods in real-world projects."
   },
   "announcementsSection": {
     "badge": "Urgent Alerts",
@@ -96,7 +103,19 @@
     "subtitle": "Important dates and academic notices for students",
     "item1": "Early registration schedule for upcoming semester courses across all levels",
     "item2": "Midterm examination schedule and lab session timetables",
-    "item3": "Training workshop on Generative AI techniques and Cloud Computing"
+    "item3": "Training workshop on Generative AI techniques and Cloud Computing",
+    "item1Title": "Early registration for the upcoming semester",
+    "item1Desc": "Students can follow the published schedule and complete early registration for their courses.",
+    "item2Title": "Midterm examination schedule announced",
+    "item2Desc": "The midterm schedule and computer lab timetables are now available for students.",
+    "item3Title": "Generative AI and Cloud Computing workshop",
+    "item3Desc": "A practical training workshop will introduce students to current generative AI and cloud computing tools.",
+    "item4Title": "Important student services notice",
+    "item4Desc": "Students are reminded to check their university email for academic service updates.",
+    "item1Date": "August 12, 2026",
+    "item2Date": "August 15, 2026",
+    "item3Date": "August 18, 2026",
+    "item4Date": "August 20, 2026"
   },
   "programsSection": {
     "badge": "Academic Departments",
@@ -133,11 +152,11 @@
     "col2Title": "Quick Links",
     "col3Title": "Departments",
     "col4Title": "Contact Us",
-    "address": "University Campus, Central Computing Building",
+    "address": "Azbet Saad, Sidi Gaber, Alexandria",
     "phone": "+20 2 12345678",
-    "email": "info@fci.edu.eg",
+    "email": "fcds-dean@alexu.edu.eg",
     "workingHours": "Sun - Thu: 8:00 AM - 3:00 PM",
-    "copyright": "All Rights Reserved © 2026 Faculty of Computers & Data Science. IT Department.",
+    "copyright": "All Rights Reserved © 2026 Faculty of Computers & Data Science. Developed by Team 32.",
     "quickLinks": {
       "about": "About Us",
       "departments": "Departments",
@@ -161,5 +180,179 @@
     "pageTitle": "Page",
     "underConstruction": "This page is under development by other team members.",
     "backHome": "Back to Home"
+  },
+  "newsPage": {
+    "badge": "News & Highlights",
+    "title": "Faculty News",
+    "subtitle": "Latest academic, research, student, and admissions news.",
+    "search": "Search news...",
+    "category": "Category",
+    "readMore": "Read More",
+    "empty": "No news available.",
+    "notFound": "News article not found.",
+    "backToNews": "Back to News",
+    "categories": {
+      "all": "All Categories",
+      "academic": "Academic",
+      "students": "Students",
+      "admissions": "Admissions",
+      "research": "Research"
+    }
+  },
+  "announcementsPage": {
+    "badge": "Important Notices",
+    "title": "Announcements",
+    "subtitle": "Important academic notices and student updates.",
+    "search": "Search announcements...",
+    "empty": "No announcements available."
+  },
+  "eventsPage": {
+    "badge": "Student Activities",
+    "title": "Upcoming Events",
+    "subtitle": "Conferences, workshops, career fairs, and academic activities.",
+    "search": "Search events...",
+    "category": "Event category",
+    "empty": "No events match your search.",
+    "categories": {
+      "all": "All Categories",
+      "career": "Career",
+      "academic": "Academic",
+      "workshop": "Workshop",
+      "students": "Student Activities"
+    },
+    "event1Title": "Annual Tech Career Fair with Industry Leaders",
+    "event1Date": "September 15, 2026",
+    "event1Desc": "Meet leading technology companies, explore internships, and discover career opportunities.",
+    "event1Location": "Central Campus Hall",
+    "event1Time": "10:00 AM - 4:00 PM",
+    "event2Title": "Graduation Projects Exhibition & Honor Ceremony",
+    "event2Date": "September 20, 2026",
+    "event2Desc": "Students present their graduation projects and outstanding students are honored.",
+    "event2Location": "Faculty Main Auditorium",
+    "event2Time": "11:00 AM - 3:00 PM",
+    "event3Title": "Practical Workshop: Generative AI & Cloud Computing",
+    "event3Date": "September 24, 2026",
+    "event3Desc": "A hands-on workshop introducing modern generative AI tools and cloud computing services.",
+    "event3Location": "Computer Labs Building",
+    "event3Time": "9:00 AM - 2:00 PM",
+    "event4Title": "Student Innovation & Coding Day",
+    "event4Date": "October 2, 2026",
+    "event4Desc": "A student-focused day of coding challenges, innovation demos, and collaborative activities.",
+    "event4Location": "Student Activities Center",
+    "event4Time": "10:00 AM - 5:00 PM",
+    "event5Title": "Start Of The Semester",
+    "event5Date": "October 7, 2026",
+    "event5Desc": "The official start of the new academic semester with orientation sessions and welcome activities for students.",
+    "event5Location": "Faculty",
+    "event5Time": "8:00 AM - 4:00 PM"
+  },
+  "contactPage": {
+    "badge": "Get In Touch",
+    "title": "Contact Us",
+    "subtitle": "Have a question or need assistance? Send us a message and our team will get back to you.",
+    "infoTitle": "We'd Love to Hear From You",
+    "infoDescription": "Use the contact form for questions, feedback, or requests related to the faculty and its services.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "formTitle": "Send Us a Message",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Your message has been submitted successfully. Thank you for contacting us!",
+    "errorSummary": "Please correct the highlighted fields before submitting.",
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "nameShort": "Name must be at least 2 characters.",
+      "emailRequired": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneRequired": "Please enter your phone number.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "messageRequired": "Please enter your message.",
+      "messageShort": "Message must be at least 10 characters."
+    }
+  },
+  "common": {
+    "viewDetails": "View Details"
+  },
+  "about": {
+    "title": "Faculty of Computers and Data Science",
+    "intro": "We prepare a generation of specialists capable of leading digital transformation, through modern academic programs and a research environment that supports innovation.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a regionally leading faculty in computing and data science education and research by 2030.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide outstanding education and applied research that keeps pace with labor market needs and serves the community.",
+    "statsTitle": "The Faculty in Numbers",
+    "stats": {
+      "students": "Students",
+      "faculty": "Faculty Members",
+      "departments": "Academic Departments",
+      "graduationRate": "Graduation Rate"
+    },
+    "valuesTitle": "Our Values",
+    "values": {
+      "excellence": {
+        "title": "Excellence",
+        "text": "We strive for excellence in everything we teach and research."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "text": "We encourage creative thinking and solving problems in new ways."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "text": "We uphold the highest standards of academic and professional honesty."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "text": "We believe in the power of teamwork between students and faculty."
+      }
+    },
+    "historyTitle": "Our History",
+    "historyText": "The faculty was founded to meet the growing need for computing and data science specialists, and has continued to expand its programs and departments over the years."
+  },
+  "departments": {
+    "badge": "Academic Departments",
+    "pageTitle": "Faculty Departments",
+    "pageIntro": "Five specialized departments covering the faculty's core computing and data science fields, preparing students for the job market.",
+    "empty": "No departments available at the moment.",
+    "notFound": "Department not found.",
+    "backToList": "Back to Departments",
+    "relatedPrograms": "The Program under this Department",
+    "programsCount": "Program",
+    "viewDetailsAria": "View details of {{name}} department"
+  },
+  "programs": {
+    "badge": "Academic Programs",
+    "pageTitle": "Academic Programs",
+    "pageIntro": "Specialized Bachelor's programs, each linked to one of the faculty's five departments.",
+    "empty": "No programs available at the moment.",
+    "notFound": "Program not found.",
+    "backToList": "Back to Programs",
+    "duration": "Duration",
+    "degreeLabel": "Degree",
+    "departmentLabel": "Department",
+    "viewDetailsAria": "View details of {{name}} program"
+  },
+  "facultyPage": {
+    "badge": "Faculty",
+    "title": "Our Faculty",
+    "subtitle": "Meet the faculty members who support teaching, research, and student success.",
+    "search": "Search by name or title...",
+    "department": "Department",
+    "allDepartments": "All Departments",
+    "showing": "Showing {{count}} faculty members",
+    "clear": "Clear filters",
+    "viewProfile": "View Profile",
+    "close": "Close profile",
+    "emptyTitle": "No faculty members found",
+    "emptyText": "Try a different name, title, or department."
+  },
+  "servicesPage": {
+    "badge": "Student & Academic Services",
+    "title": "Faculty Services",
+    "subtitle": "Helpful services and support available to students across the faculty."
   }
 }
