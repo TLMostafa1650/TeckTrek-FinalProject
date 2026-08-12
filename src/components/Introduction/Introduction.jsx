@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import {
   FaAward,
   FaMicrochip,
@@ -15,10 +16,10 @@ import facultyBuildingImg from '../../assets/images/faculty_building_17863842661
 import styles from './Introduction.module.css';
 
 export default function Introduction() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowLeft : FaArrowRight;
 
   const features = [
@@ -51,7 +52,7 @@ export default function Introduction() {
             <div className={styles.imageFrame}>
               <img
                 src={facultyBuildingImg}
-                alt="كلية الحاسبات وعلوم البيانات"
+                alt={t('introduction.imageAlt')}
                 className={styles.facultyImage}
                 loading="lazy"
                 referrerPolicy="no-referrer"

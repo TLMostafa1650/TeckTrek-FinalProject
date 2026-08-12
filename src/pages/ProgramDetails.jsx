@@ -1,14 +1,15 @@
 // src/pages/ProgramDetails.jsx
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import useLang from "../hooks/useLang";
 import { getProgramById } from "../data/programs";
 import { getDepartmentById } from "../data/departments";
 import styles from "./ProgramDetails.module.css";
 
 function ProgramDetails() {
   const { id } = useParams();
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language?.startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
   const program = getProgramById(id);
 
   if (!program) {
@@ -50,10 +51,10 @@ function ProgramDetails() {
 
             <div className={styles.programMeta}>
               <span>
-                {t("programs.degreeLabel")}: {degree}
+                {t("programs.degreeLabelWithValue", { value: degree })}
               </span>
               <span>
-                {t("programs.duration")}: {duration}
+                {t("programs.durationLabelWithValue", { value: duration })}
               </span>
               {department && (
                 <span>

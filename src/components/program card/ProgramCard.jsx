@@ -1,11 +1,12 @@
 // src/components/ProgramCard.jsx
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import useLang from "../../hooks/useLang";
 import styles from "./ProgramCard.module.css";
 
 function ProgramCard({ program }) {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language?.startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
 
   const name = program.name[lang];
   const shortDescription = program.shortDescription[lang];
@@ -32,7 +33,7 @@ function ProgramCard({ program }) {
 
         <div className={styles.meta}>
           <span>
-            {t("programs.duration")}: {duration}
+            {t("programs.durationLabelWithValue", { value: duration })}
           </span>
         </div>
 

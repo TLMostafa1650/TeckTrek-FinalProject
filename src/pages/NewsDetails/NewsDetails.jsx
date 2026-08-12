@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import { FaArrowLeft, FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
 import news from '../../data/news';
 import styles from './NewsDetails.module.css';
 
 export default function NewsDetails() {
   const { id } = useParams();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const item = news.find((entry) => String(entry.id) === String(id));
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowRight : FaArrowLeft;
 
   useEffect(() => { window.scrollTo(0, 0); }, [id]);

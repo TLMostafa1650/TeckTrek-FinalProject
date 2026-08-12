@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import {
   FaGraduationCap,
   FaMapMarkerAlt,
@@ -17,8 +18,8 @@ import {
 import styles from './Footer.module.css';
 
 export default function Footer() {
-  const { t, i18n } = useTranslation();
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { t } = useTranslation();
+  const { isRtl } = useLang();
 
   const ArrowIcon = isRtl ? FaChevronLeft : FaChevronRight;
 
@@ -36,16 +37,16 @@ export default function Footer() {
             </div>
             <p className={styles.aboutText}>{t('footer.col1Desc')}</p>
             <div className={styles.socialList}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label={t('common.followUsOn', { platform: 'Facebook' })}>
                 <FaFacebookF />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Twitter">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label={t('common.followUsOn', { platform: 'Twitter' })}>
                 <FaTwitter />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label={t('common.followUsOn', { platform: 'LinkedIn' })}>
                 <FaLinkedinIn />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="YouTube">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label={t('common.followUsOn', { platform: 'YouTube' })}>
                 <FaYoutube />
               </a>
             </div>
@@ -126,8 +127,8 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>{t('footer.copyright')}</p>
           <div className={styles.bottomLinks}>
-            <NavLink to="/privacy">{t('footer.quickLinks.about')}</NavLink>
-            <NavLink to="/terms">{t('footer.quickLinks.contact')}</NavLink>
+            <NavLink to="/about">{t('footer.quickLinks.about')}</NavLink>
+            <NavLink to="/contact">{t('footer.quickLinks.contact')}</NavLink>
           </div>
         </div>
       </div>

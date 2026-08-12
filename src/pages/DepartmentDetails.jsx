@@ -1,6 +1,7 @@
 // src/pages/DepartmentDetails.jsx
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import useLang from "../hooks/useLang";
 import { getDepartmentById } from "../data/departments";
 import { getProgramsByDepartment } from "../data/programs";
 import ProgramCard from "../components/program card/ProgramCard";
@@ -8,8 +9,8 @@ import styles from "./DepartmentDetails.module.css";
 
 function DepartmentDetails() {
   const { id } = useParams();
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language?.startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
   const department = getDepartmentById(id);
 
   if (!department) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import {
   FaGraduationCap,
   FaBrain,
@@ -14,11 +15,11 @@ import Button from '../Button/Button';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowLeft : FaArrowRight;
 
   const slides = [
@@ -102,7 +103,7 @@ export default function Hero() {
                 key={s.id}
                 onClick={() => setActiveSlide(idx)}
                 className={`${styles.dot} ${activeSlide === idx ? styles.activeDot : ''}`}
-                aria-label={`Go to slide ${idx + 1}`}
+                aria-label={t('hero.goToSlide', { number: idx + 1 })}
                 type="button"
               />
             ))}

@@ -1,11 +1,12 @@
 // src/components/DepartmentCard.jsx
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import useLang from "../../hooks/useLang";
 import styles from "./DepartmentCard.module.css";
 
 function DepartmentCard({ department }) {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language?.startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
 
   const name = department.name[lang];
   const shortDescription = department.shortDescription[lang];

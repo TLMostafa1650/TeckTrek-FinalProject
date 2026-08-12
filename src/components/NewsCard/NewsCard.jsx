@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaCalendarAlt, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import { NavLink } from 'react-router-dom';
 import styles from './NewsCard.module.css';
 
 export default function NewsCard({ item }) {
-  const { t, i18n } = useTranslation();
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { t } = useTranslation();
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowLeft : FaArrowRight;
 
   return (

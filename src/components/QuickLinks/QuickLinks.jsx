@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import {
   FaUserShield,
   FaEnvelopeOpenText,
@@ -15,8 +16,8 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import styles from './QuickLinks.module.css';
 
 export default function QuickLinks() {
-  const { t, i18n } = useTranslation();
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { t } = useTranslation();
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowLeft : FaArrowRight;
 
   const links = [

@@ -1,7 +1,11 @@
 import React from "react";
 import { FaBookOpen, FaHeadset, FaUserGraduate } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import useLang from "../hooks/useLang";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import Loading from "../components/Loading/Loading";
+import ErrorState from "../components/ErrorState/ErrorState";
+import usePageData from "../hooks/usePageData";
 import services from "../data/services";
 import styles from "./Services.module.css";
 
@@ -12,8 +16,9 @@ const icons = {
 };
 
 export default function Services() {
-  const { t, i18n } = useTranslation();
-  const lang = (i18n.language || "en").startsWith("ar") ? "ar" : "en";
+  const { t } = useTranslation();
+  const { lang } = useLang();
+  const { loading, error, retry } = usePageData(services);
 
   return (
     <div className={styles.page}>
@@ -25,6 +30,13 @@ export default function Services() {
           align="center"
         />
 
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <ErrorState onRetry={retry} />
+        ) : services.length === 0 ? (
+          <p className={styles.empty}>{t("servicesPage.empty")}</p>
+        ) : (
         <div className={styles.grid}>
           {services.map((service) => {
             const Icon = icons[service.icon];
@@ -41,6 +53,7 @@ export default function Services() {
             );
           })}
         </div>
+        )}
       </div>
     </div>
   );

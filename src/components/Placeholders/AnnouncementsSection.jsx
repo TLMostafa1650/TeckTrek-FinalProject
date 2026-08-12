@@ -1,14 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useLang from '../../hooks/useLang';
 import { FaBullhorn, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import Button from '../Button/Button';
 import styles from './AnnouncementsSection.module.css';
 
 export default function AnnouncementsSection() {
-  const { t, i18n } = useTranslation();
-  const isRtl = (i18n.language || 'ar') === 'ar';
+  const { t } = useTranslation();
+  const { isRtl } = useLang();
   const ArrowIcon = isRtl ? FaArrowLeft : FaArrowRight;
 
   const announcements = [
